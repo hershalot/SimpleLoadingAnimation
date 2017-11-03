@@ -48,7 +48,7 @@ class SimpleLoadingAnimation: UIView {
         let screenHeight = screenSize.height
         
         //places this view in the center of the screen
-        let frame: CGRect = CGRect(x: screenWidth/2 - 25,y: screenHeight/2 - 25, width: 50,height: 50)
+        let frame: CGRect = CGRect(x: screenWidth/2 - 25,y: screenHeight/2 - 25, width: 70,height: 70)
         super.init(frame:frame)
         
         //configure subviews

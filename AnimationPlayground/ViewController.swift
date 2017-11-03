@@ -17,15 +17,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        //setup animation frame
-        let animationFrame: CGRect = CGRect(x: self.view.frame.width/4, y: self.view.frame.height/4, width: self.view.frame.width/2, height: self.view.frame.width/2)
         
         //animation images
         let outsideImage: UIImage = UIImage(named: "logoOutsideRing")!
         let insideImage: UIImage = UIImage(named: "logoGlassOnly")!
         
+        
+        //setup animation frame
+        let animationFrame: CGRect = CGRect(x: self.view.frame.width/4, y: self.view.frame.height/4, width: self.view.frame.width/2, height: self.view.frame.width/2)
+        
         //init SimpleLoadingAnimation with images
-//        animation = SimpleLoadingAnimation.init(frame: animationFrame, outsideImage:outsideImage, insideImage: insideImage)
+        animation = SimpleLoadingAnimation.init(frame: animationFrame, outsideImage:outsideImage, insideImage: insideImage)
+        
+        
         
         //init with default frame
         animation = SimpleLoadingAnimation.init(outsideImage:outsideImage, insideImage: insideImage)
