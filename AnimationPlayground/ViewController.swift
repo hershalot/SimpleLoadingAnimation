@@ -20,8 +20,16 @@ class ViewController: UIViewController {
         //setup animation frame
         let animationFrame: CGRect = CGRect(x: self.view.frame.width/4, y: self.view.frame.height/4, width: self.view.frame.width/2, height: self.view.frame.width/2)
         
-        //init SimpleLoadingAnimation
-        animation = SimpleLoadingAnimation(frame: animationFrame)
+        //animation images
+        let outsideImage: UIImage = UIImage(named: "logoOutsideRing")!
+        let insideImage: UIImage = UIImage(named: "logoGlassOnly")!
+        
+        //init SimpleLoadingAnimation with images
+//        animation = SimpleLoadingAnimation.init(frame: animationFrame, outsideImage:outsideImage, insideImage: insideImage)
+        
+        //init with default frame
+        animation = SimpleLoadingAnimation.init(outsideImage:outsideImage, insideImage: insideImage)
+        
         self.view.addSubview(animation)
         
         //start animating

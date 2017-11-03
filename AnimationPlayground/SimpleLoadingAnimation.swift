@@ -31,24 +31,29 @@ class SimpleLoadingAnimation: UIView {
     var translatePeriod: Int = 4
 
     
-    
-    override init(frame: CGRect){
+    //init with custom frame and images
+    init(frame: CGRect, outsideImage: UIImage, insideImage: UIImage){
         super.init(frame: frame)
         
-        //setup outside imageview
-        self.outSideCircleImageView = UIImageView.init(frame: self.bounds)
-        self.outSideCircleImageView.image = UIImage(named: "logoOutsideRing")
-        self.outSideCircleImageView.contentMode = .scaleToFill
-        self.addSubview(self.outSideCircleImageView)
+        //configure subviews
+        self.setupImageViews(outsideImage: outsideImage, insideImage: insideImage)
         
-        //setup inside imageview (Half the size of outside image view)
-        self.insideImageView = UIImageView.init(frame: CGRect.zero)
-        self.insideImageView.frame.size = CGSize(width: self.outSideCircleImageView.bounds.width * 0.5, height: self.outSideCircleImageView.bounds.height * 0.5)
-        self.insideImageView.center = outSideCircleImageView.center
-        self.insideImageView.contentMode = .scaleToFill
-        self.insideImageView.image = UIImage(named: "logoGlassOnly")
-        self.addSubview(self.insideImageView)
+    }
+    
+    //init without setting frame
+    init(outsideImage: UIImage, insideImage: UIImage){
         
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        
+        //places this view in the center of the screen
+        let frame: CGRect = CGRect(x: screenWidth/2 - 25,y: screenHeight/2 - 25, width: 50,height: 50)
+        super.init(frame:frame)
+        
+        //configure subviews
+        self.setupImageViews(outsideImage: outsideImage, insideImage: insideImage)
+    
     }
     
     
@@ -58,13 +63,32 @@ class SimpleLoadingAnimation: UIView {
     }
     
     
+    //configures and adds imageviews based on the frame given
+    func setupImageViews(outsideImage: UIImage, insideImage: UIImage){
+        
+        //setup outside imageview
+        self.outSideCircleImageView = UIImageView.init(frame: self.bounds)
+        self.outSideCircleImageView.image = outsideImage
+        self.outSideCircleImageView.contentMode = .scaleToFill
+        self.addSubview(self.outSideCircleImageView)
+        
+        //setup inside imageview (Half the size of outside image view)
+        self.insideImageView = UIImageView.init(frame: CGRect.zero)
+        self.insideImageView.frame.size = CGSize(width: self.outSideCircleImageView.bounds.width * 0.5, height: self.outSideCircleImageView.bounds.height * 0.5)
+        self.insideImageView.center = outSideCircleImageView.center
+        self.insideImageView.contentMode = .scaleToFill
+        self.insideImageView.image = insideImage
+        self.addSubview(self.insideImageView)
+        
+    }
+
+    
+    
     
     func timerStart(){
         //timer fired slightly quicker than the animation period for a smoother transition
        gameTimer = Timer.scheduledTimer(timeInterval: animationInterval - (animationInterval * 0.1), target: self, selector: #selector(timerAnimate), userInfo: nil, repeats: true)
-        
     }
-    
     
     
     func timerAnimate(){
