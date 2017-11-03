@@ -11,7 +11,7 @@
 
 import UIKit
 
-class HrGlassLoadingAnimation: UIView {
+class SimpleLoadingAnimation: UIView {
     
     
     
@@ -35,18 +35,17 @@ class HrGlassLoadingAnimation: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
         
-        //setup parent view image
+        //setup outside imageview
         self.outSideCircleImageView = UIImageView.init(frame: self.bounds)
         self.outSideCircleImageView.image = UIImage(named: "logoOutsideRing")
         self.outSideCircleImageView.contentMode = .scaleToFill
         self.addSubview(self.outSideCircleImageView)
         
-        //setup subview
+        //setup inside imageview (Half the size of outside image view)
         self.insideImageView = UIImageView.init(frame: CGRect.zero)
         self.insideImageView.frame.size = CGSize(width: self.outSideCircleImageView.bounds.width * 0.5, height: self.outSideCircleImageView.bounds.height * 0.5)
         self.insideImageView.center = outSideCircleImageView.center
         self.insideImageView.contentMode = .scaleToFill
-        
         self.insideImageView.image = UIImage(named: "logoGlassOnly")
         self.addSubview(self.insideImageView)
         
@@ -106,7 +105,6 @@ class HrGlassLoadingAnimation: UIView {
                 self.outSideCircleImageView.transform = CGAffineTransform(translationX: 0, y: -self.insideImageView.frame.height/4)
                 
             }
-            
         }
     }
     
