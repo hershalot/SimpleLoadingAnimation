@@ -13,7 +13,10 @@
 		5E0D9FC11F893439006AFB18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0D9FBF1F893439006AFB18 /* Main.storyboard */; };
 		5E0D9FC31F893439006AFB18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0D9FC21F893439006AFB18 /* Assets.xcassets */; };
 		5E0D9FC61F893439006AFB18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0D9FC41F893439006AFB18 /* LaunchScreen.storyboard */; };
+		5E31DF761FCB629A003AEFCB /* SpinningBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E31DF751FCB629A003AEFCB /* SpinningBoxesView.swift */; };
+		5E32D01B1FBA27CA007D11B6 /* FractalCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E32D01A1FBA27CA007D11B6 /* FractalCircle.swift */; };
 		5E5E98E71FAA6C8D006C9A48 /* SimpleLoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5E98E61FAA6C8D006C9A48 /* SimpleLoadingAnimation.swift */; };
+		5E84E2F11FCA28BD0067712F /* BouncingBallsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84E2F01FCA28BD0067712F /* BouncingBallsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,10 @@
 		5E0D9FC21F893439006AFB18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0D9FC51F893439006AFB18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0D9FC71F893439006AFB18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E31DF751FCB629A003AEFCB /* SpinningBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningBoxesView.swift; sourceTree = "<group>"; };
+		5E32D01A1FBA27CA007D11B6 /* FractalCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalCircle.swift; sourceTree = "<group>"; };
 		5E5E98E61FAA6C8D006C9A48 /* SimpleLoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoadingAnimation.swift; sourceTree = "<group>"; };
+		5E84E2F01FCA28BD0067712F /* BouncingBallsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncingBallsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				5E0D9FC71F893439006AFB18 /* Info.plist */,
 				5E5E98E61FAA6C8D006C9A48 /* SimpleLoadingAnimation.swift */,
 				5E0C43F31FACF2FD007B15FE /* SimpleSecondaryLoadingAnimation.swift */,
+				5E32D01A1FBA27CA007D11B6 /* FractalCircle.swift */,
+				5E84E2F01FCA28BD0067712F /* BouncingBallsView.swift */,
+				5E31DF751FCB629A003AEFCB /* SpinningBoxesView.swift */,
 			);
 			path = AnimationPlayground;
 			sourceTree = "<group>";
@@ -143,10 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E84E2F11FCA28BD0067712F /* BouncingBallsView.swift in Sources */,
 				5E0C43F41FACF2FD007B15FE /* SimpleSecondaryLoadingAnimation.swift in Sources */,
 				5E0D9FBE1F893439006AFB18 /* ViewController.swift in Sources */,
+				5E31DF761FCB629A003AEFCB /* SpinningBoxesView.swift in Sources */,
 				5E5E98E71FAA6C8D006C9A48 /* SimpleLoadingAnimation.swift in Sources */,
 				5E0D9FBC1F893439006AFB18 /* AppDelegate.swift in Sources */,
+				5E32D01B1FBA27CA007D11B6 /* FractalCircle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

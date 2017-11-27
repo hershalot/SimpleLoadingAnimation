@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     var animation: SimpleLoadingAnimation!
     var animation2: SimpleSecondaryLoadingAnimation!
+    var ballsView: BouncingBallsView!
+    var squaresView: SpinningBoxesView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,34 +21,60 @@ class ViewController: UIViewController {
         
         
         
-        //animation images
-        let outsideImage: UIImage = UIImage(named: "logoOutsideRing")!
-        let insideImage: UIImage = UIImage(named: "logoGlassOnly")!
         
-        //secondary animation images
-        let outsideImage2: UIImage = UIImage(named: "outsideRingRoisListIcon")!
-        let insideImage2: UIImage = UIImage(named: "insideHouseRoisListIcon")!
+        let animationFrame: CGRect = CGRect(x: self.view.frame.width/4, y: self.view.frame.height/4, width: 100, height: 100)
         
-        animation2 = SimpleSecondaryLoadingAnimation(outsideImage: outsideImage2, insideImage: insideImage2)
-        self.view.addSubview(animation2)
+        squaresView = SpinningBoxesView(frame: animationFrame)
         
-        
-        animation2.startAnimating()
+        self.view.addSubview(squaresView)
         
         
         
-        //setup spin animation frame
-        let animationFrame: CGRect = CGRect(x: self.view.frame.width/4, y: self.view.frame.height/4, width: self.view.frame.width/2, height: self.view.frame.width/2)
+        /**
+         *
+         * BOUNCING BALLS ANIMATION
+         *
+         */
         
-        //init SimpleLoadingAnimation with images
-        animation = SimpleLoadingAnimation.init(frame: animationFrame, outsideImage:outsideImage, insideImage: insideImage)
+//        ballsView = BouncingBallsView(frame: animationFrame, numBalls: 4, ballColors: [UIColor.red, UIColor.blue, UIColor.yellow, UIColor.green])
+//        ballsView.center = self.view.center
+//        self.view.addSubview(ballsView)
+//
+//        ballsView.startAnimating()
         
-        //init with default frame
-        animation = SimpleLoadingAnimation.init(outsideImage:outsideImage, insideImage: insideImage)
-//        self.view.addSubview(animation)
         
-        //start animating
-        animation.startAnimating()
+        
+
+        /**
+         *
+         * ANIMATION WITH INSIDE/OUTSIDE DEMO
+         *
+         */
+        
+        
+//        animation images
+//        let outsideImage: UIImage = UIImage(named: "logoOutsideRing")!
+//        let insideImage: UIImage = UIImage(named: "logoGlassOnly")!
+//
+//        //secondary animation images
+//        let outsideImage2: UIImage = UIImage(named: "outsideRingRoisListIcon")!
+//        let insideImage2: UIImage = UIImage(named: "insideHouseRoisListIcon")!
+//
+//        animation2 = SimpleSecondaryLoadingAnimation(outsideImage: outsideImage2, insideImage: insideImage2)
+//        self.view.addSubview(animation2)
+//
+//
+//        animation2.startAnimating()
+//
+//        //init SimpleLoadingAnimation with images
+//        animation = SimpleLoadingAnimation.init(frame: animationFrame, outsideImage:outsideImage, insideImage: insideImage)
+//
+//        //init with default frame
+//        animation = SimpleLoadingAnimation.init(outsideImage:outsideImage, insideImage: insideImage)
+////        self.view.addSubview(animation)
+//
+//        //start animating
+//        animation.startAnimating()
     }
 
     
@@ -57,10 +85,17 @@ class ViewController: UIViewController {
 
 
     @IBAction func resetAction(_ sender: Any) {
-        
-        self.animation.stopAnimating()
-        self.animation.startAnimating()
+
+//        self.ballsView.reset()
         
     }
+    
+    @IBAction func startAction(_ sender: Any) {
+//        self.ballsView.startAnimating()
+    }
+    @IBAction func stopAction(_ sender: Any) {
+//        self.ballsView.stopAnimating()
+    }
+    
 }
 
